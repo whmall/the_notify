@@ -5,7 +5,8 @@ module TheNotify
 
   configure do |config|
     config.admin_class = 'Admin::BaseController'
-    config.my_class = 'My::BaseController'
+    config.my_class = 'Admin::BaseController'
+    config.user_class = 'MyWhmallController'
   end
 
 end
