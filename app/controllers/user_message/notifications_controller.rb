@@ -1,4 +1,4 @@
-class User::NotificationsController < User::TheNotifyController
+class UserMessage::NotificationsController < UserMessage::TheNotifyController
   before_action :set_notification, only: [:show, :url, :read, :edit, :update, :destroy]
   before_action :set_receiver, only: [:index, :read_all]
   protect_from_forgery except: :read
@@ -32,7 +32,7 @@ class User::NotificationsController < User::TheNotifyController
     @notification = Notification.new(params[:notification].permit!)
 
     if @notification.save
-      redirect_to(notifications_path, notice: 'Notification 创建成功。')
+      redirect_to(my_whmall_notifications_path, notice: 'Notification 创建成功。')
     else
       render action: 'new'
     end
@@ -55,7 +55,7 @@ class User::NotificationsController < User::TheNotifyController
 
   def update
     if @notification.update(params[:notification].permit!)
-      redirect_to(notifications_path, notice: 'Notification 更新成功。')
+      redirect_to(my_whmall_notifications_path, notice: 'Notification 更新成功。')
     else
       render action: 'edit'
     end

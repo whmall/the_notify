@@ -12,11 +12,11 @@
           <div class="content">
             <% if notification.title %>
               <div class="header">
-                <%= link_to notification.title, url_notification_path(notification) %>
+                <%= link_to notification.title, url_my_whmall_notification_path(notification) %>
               </div>
             <% end %>
             <div class="description">
-              <%= link_to notification.body, url_notification_path(notification) %>
+              <%= link_to notification.body, url_my_whmall_notification_path(notification) %>
             </div>
             <div class="extra">
               <span class="local_time"><%= notification.created_at.to_s %></span>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resource :notification_settings, only: [:show, :edit, :update]
   end
 
-  scope :my_whmall, as: 'my_whmall', module: :user do
+  scope :my_whmall, as: 'my_whmall', module: :user_message do
     resources :notifications do
       get 'url', on: :member
       get 'read', on: :member

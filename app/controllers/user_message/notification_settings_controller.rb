@@ -1,4 +1,4 @@
-class User::NotificationSettingsController < User::TheNotifyController
+class UserMessage::NotificationSettingsController < UserMessage::TheNotifyController
   before_action :set_notification_setting, only: [:show, :edit, :update]
 
   def show
@@ -9,7 +9,7 @@ class User::NotificationSettingsController < User::TheNotifyController
 
   def update
     if @notification_setting.update(notification_setting_params)
-      redirect_to notification_settings_url(receiver: params[:receiver]), notice: 'Notification setting was successfully updated.'
+      redirect_to my_whmall_notification_settings_url(receiver: params[:receiver]), notice: 'Notification setting was successfully updated.'
     else
       render :edit
     end
